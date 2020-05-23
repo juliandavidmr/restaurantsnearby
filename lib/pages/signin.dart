@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurantsnearby/pages/dashboard.dart';
+import 'package:restaurantsnearby/pages/signup.dart';
 
 class SigninPage extends StatelessWidget {
   @override
@@ -10,7 +11,6 @@ class SigninPage extends StatelessWidget {
     return Scaffold(
 			body: Center(
 				child: Column(
-
 					children: <Widget>[
 						Container(
 							margin: EdgeInsets.only(top: size.height * .15),
@@ -30,12 +30,29 @@ class SigninPage extends StatelessWidget {
 										child: Text('Sign in'),
 										onPressed: () {
 											Navigator.push(context, MaterialPageRoute(
-												builder: (context) => DashBoardPage(),
+												builder: (context) => DashboardPage(),
 											));
 										},
 									)
 								],
 							),
+						),
+						Row(
+							mainAxisAlignment: MainAxisAlignment.center,
+							children: <Widget>[
+								Text("don't have an account?"),
+								SizedBox(width: 10,),
+								GestureDetector(
+									onTap: () {
+										Navigator.push(context, MaterialPageRoute(
+											builder: (context) => SignupPage(),
+										));
+									},
+									child: Text("Register", style: TextStyle(
+										fontWeight: FontWeight.w900
+									),),
+								)
+							],
 						)
 					],
 				)
